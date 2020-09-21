@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import RankingList from "../components/RankingList";
+import { useStateValue } from "../contextAPI/StateProvider";
+
+interface state {
+  rankingList: string[];
+}
 
 const Ranking: React.FC = () => {
-  return <section>Ranking</section>;
+  const [{ rankingList }] = useStateValue();
+
+  useEffect(() => {
+    console.log(rankingList);
+  }, [rankingList]);
+
+  return (
+    <section>
+      <RankingList />
+    </section>
+  );
 };
 
 export default Ranking;
