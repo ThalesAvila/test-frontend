@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import Routes from "./routes";
+import React from "react";
+import Routes from "../../routes";
 import { BrowserRouter as Router } from "react-router-dom";
-
+import "./App.scss";
 const App: React.FC = () => {
-  useEffect(() => {}, []);
   return (
     <div className="App">
       <Router>

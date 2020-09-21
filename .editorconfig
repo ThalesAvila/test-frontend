@@ -12,7 +12,7 @@ insert_final_newline = true
 
 # Matches multiple files with brace expansion notation
 # Set default charset
-[*.{js,py,jsx}]
+[*.{js,py,jsx,tsx,ts,scss}]
 charset = utf-8
 indent_size = 2
 
