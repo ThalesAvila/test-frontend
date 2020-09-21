@@ -1,17 +1,21 @@
 import React, { useEffect } from "react";
 import RankingList from "../components/RankingList";
 import { useStateValue } from "../contextAPI/StateProvider";
+import { actionTypes } from "../contextAPI/reducer";
 
-interface state {
-  rankingList: string[];
-}
+import api from "../services/api";
 
 const Ranking: React.FC = () => {
-  const [{ rankingList }] = useStateValue();
+  const [_, dispatch] = useStateValue();
 
   useEffect(() => {
-    console.log(rankingList);
-  }, [rankingList]);
+    api.get("matchboxbrasil.json").then((r) => {
+      dispatch({
+        type: actionTypes.SAVE_RANKING_LIST,
+        rankingList: r.data.data,
+      });
+    });
+  }, []);
 
   return (
     <section>

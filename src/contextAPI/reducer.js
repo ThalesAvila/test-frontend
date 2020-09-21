@@ -1,5 +1,5 @@
 export const initialState = {
-  rankingList: ["First item list"],
+  rankingList: [],
 };
 
 export const actionTypes = {
