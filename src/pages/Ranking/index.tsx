@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import RankingList from "../../components/RankingList";
+import Header from "../../components/Header";
 import { useStateValue } from "../../contextAPI/StateProvider";
 import { actionTypes } from "../../contextAPI/reducer";
 import api from "../../services/api";
@@ -24,6 +25,7 @@ const Ranking: React.FC = () => {
 
   return (
     <section className="Ranking">
+      <Header title="ranking" />
       <RankingList />
     </section>
   );
