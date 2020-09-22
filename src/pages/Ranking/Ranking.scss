@@ -1,4 +1,8 @@
 .Ranking {
   display: flex;
   justify-content: center;
+  flex-wrap: nowrap;
+  & .Content {
+    max-width: 34.2rem;
+  }
 }

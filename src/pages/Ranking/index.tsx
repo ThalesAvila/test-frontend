@@ -25,8 +25,10 @@ const Ranking: React.FC = () => {
 
   return (
     <section className="Ranking">
-      <Header title="ranking" />
-      <RankingList />
+      <div className="Content">
+        <Header title="ranking" />
+        <RankingList />
+      </div>
     </section>
   );
 };
