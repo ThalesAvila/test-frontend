@@ -3,9 +3,11 @@
   display: flex;
   align-items: center;
   padding: 1rem;
+  border-radius: 0.3rem;
+
 
   // Efeito striped
-  &:nth-child(2n) {
+  &--striped {
     background: #f2f0f1;
   }
 

@@ -8,10 +8,11 @@ const ProfileCard: React.FC<Profile> = ({
   description,
   index,
 }) => {
+  const striped = Number(index) % 2 === 0;
   return (
-    <div className="ProfileCard">
+    <div className={`ProfileCard ${striped && "ProfileCard--striped"}`}>
       <div className="ProfileCard-Avatar">
-        <img src={picture} alt="" />
+        <img src={picture} alt={name} />
         {/* Adicionando flexibilidade ao componente, exibir posição apenas se index estiver definido */}
         {index && <span>{index}</span>}
       </div>

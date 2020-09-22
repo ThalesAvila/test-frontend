@@ -4,7 +4,7 @@ import Logo from "../../assets/img/matchbox-logo.png";
 const Header: React.FC<{ title: string }> = ({ title }) => {
   return (
     <header className="Header">
-      <img src={Logo} alt="" />
+      <img src={Logo} alt="Matchbox Logo" />
       <h1>{title}</h1>
     </header>
   );
