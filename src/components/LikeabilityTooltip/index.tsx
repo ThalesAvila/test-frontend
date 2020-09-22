@@ -1,19 +1,30 @@
 import React from "react";
 import "./LikeabilityTooltip.scss";
-import { Profile } from "../../contextAPI/reducer";
+import { percentageMask } from "../../services/utils";
 
-const LikeabilityTooltip: React.FC = ({ children }) => {
+interface Input {
+  likePercentage: number | null;
+  dislikePercentage: number | null;
+}
+
+const LikeabilityTooltip: React.FC<Input> = ({
+  children,
+  likePercentage,
+  dislikePercentage,
+}) => {
   return (
     <div className="LikeabilityTooltip" data-text="">
       {children}
+      {/* Exibir tooltip apenas se likePercentage ou dislikePercentage estiverem definidos */}
+
       <table className="Content">
         <thead>
           <th>gostam</th>
           <th>não gostam</th>
         </thead>
         <tr>
-          <td>07%</td>
-          <td>93%</td>
+          <td>{percentageMask(likePercentage)}</td>
+          <td>{percentageMask(dislikePercentage)}</td>
         </tr>
       </table>
     </div>

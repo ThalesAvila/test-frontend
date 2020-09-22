@@ -57,6 +57,10 @@
     opacity: 1;
   }
 
+  .LikeabilityTooltip:first-of-type {
+    border-radius: .3rem .3rem 0 0;
+  }
+
   &:after {
     content: "";
     position: absolute;

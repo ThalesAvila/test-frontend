@@ -14,9 +14,9 @@ const RankingList: React.FC = () => {
     // 2. Estilizar a lista do ranking
     <div className="RankingList">
       {/* 3. E renderizar um ProfileCard para cada item do rankingList */}
-      {rankingList.map((el: Profile, i: number) => (
-        <LikeabilityTooltip key={el.__id}>
-          <ProfileCard {...el} index={i + 1} />
+      {rankingList.map((profile: Profile, i: number) => (
+        <LikeabilityTooltip {...profile} key={profile.__id}>
+          <ProfileCard {...profile} index={i + 1} />
         </LikeabilityTooltip>
       ))}
     </div>
