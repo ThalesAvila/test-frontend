@@ -1,20 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./RankingList.scss";
 import ProfileCard from "../ProfileCard";
+import LikeabilityTooltip from "../LikeabilityTooltip";
 import { useStateValue } from "../../contextAPI/StateProvider";
 import { Profile } from "../../contextAPI/reducer";
 
+// O componente de RankingList fica responsável por:
 const RankingList: React.FC = () => {
+  // 1. Ler o state global
   const [{ rankingList }] = useStateValue();
 
-  useEffect(() => {
-    console.log("rankingList", rankingList);
-  }, [rankingList]);
-
   return (
+    // 2. Estilizar a lista do ranking
     <div className="RankingList">
-      {rankingList.map((el: Profile) => (
-        <ProfileCard key={el.__id} {...el} />
+      {/* 3. E renderizar um ProfileCard para cada item do rankingList */}
+      {rankingList.map((el: Profile, i: number) => (
+        <LikeabilityTooltip key={el.__id}>
+          <ProfileCard {...el} index={i + 1} />
+        </LikeabilityTooltip>
       ))}
     </div>
   );

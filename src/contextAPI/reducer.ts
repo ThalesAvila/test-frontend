@@ -5,8 +5,15 @@ export interface Profile {
   picture: string;
   positive: number | null;
   negative: number | null;
+  index: number | null;
 }
 
+/* Optei por utilizar contextAPI para implementar a DataLayer da aplicação.
+   Não havia necessidade porém, supondo um cenário em que tivessemos uma segunda rota "/profile"
+   por exemplo. Ao ter uma única fonte de verdade com o state global, seria possível reutilizar o
+   componente RankingList, já que sua responsabilidade é de exclusivamente ler o state global e renderizar
+   os items correspondentes.
+*/
 export const initialState = {
   rankingList: [],
 };
