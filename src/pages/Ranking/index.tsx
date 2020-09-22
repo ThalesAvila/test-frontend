@@ -7,6 +7,7 @@ import api from "../../services/api";
 import "./Ranking.scss";
 
 const Ranking: React.FC = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, dispatch] = useStateValue();
 
   useEffect(() => {
@@ -16,6 +17,7 @@ const Ranking: React.FC = () => {
         rankingList: r.data.data,
       });
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
