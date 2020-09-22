@@ -19,13 +19,17 @@ const LikeabilityTooltip: React.FC<Input> = ({
 
       <table className="Content">
         <thead>
-          <th>gostam</th>
-          <th>não gostam</th>
+          <tr>
+            <th>gostam</th>
+            <th>não gostam</th>
+          </tr>
         </thead>
-        <tr>
-          <td>{percentageMask(likePercentage)}</td>
-          <td>{percentageMask(dislikePercentage)}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>{percentageMask(likePercentage)}</td>
+            <td>{percentageMask(dislikePercentage)}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
