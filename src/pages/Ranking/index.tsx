@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import RankingList from "../components/RankingList";
-import { useStateValue } from "../contextAPI/StateProvider";
-import { actionTypes } from "../contextAPI/reducer";
+import RankingList from "../../components/RankingList";
+import { useStateValue } from "../../contextAPI/StateProvider";
+import { actionTypes } from "../../contextAPI/reducer";
+import api from "../../services/api";
 
-import api from "../services/api";
+import "./Ranking.scss";
 
 const Ranking: React.FC = () => {
   const [_, dispatch] = useStateValue();
@@ -18,7 +19,7 @@ const Ranking: React.FC = () => {
   }, []);
 
   return (
-    <section>
+    <section className="Ranking">
       <RankingList />
     </section>
   );
