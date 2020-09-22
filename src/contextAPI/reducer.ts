@@ -33,13 +33,16 @@ const reducer = (state: typeof initialState, action: ACTIONTYPE) => {
     case "SAVE_RANKING_LIST": {
       return {
         ...state,
-        rankingList: [...action.rankingList].map((profile) => {
-          // Normalizando nome
-          profile.name = profile.name.split(" ").slice(0, 2).join(" ");
-          profile = { ...profile, ...calcLikePercentage(profile) };
-          console.log(profile);
-          return profile;
-        }),
+        rankingList: [...action.rankingList]
+          .map((profile) => {
+            // Normalizando nome
+            profile.name = profile.name.split(" ").slice(0, 2).join(" ");
+            // Calculado porcentagem de likes e dislikes
+            profile = { ...profile, ...calcLikePercentage(profile) };
+            return profile;
+          })
+          // Ordenando por porcentagem de likes
+          .sort((a, b) => Number(b.likePercentage) - Number(a.likePercentage)),
       };
     }
     default:
