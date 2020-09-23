@@ -5,11 +5,12 @@ import App from "./components/App";
 import { StateProvider } from "./contextAPI/StateProvider";
 import reducer, { initialState } from "./contextAPI/reducer";
 
-ReactDOM.render(
+const Index = (
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
       <App />
     </StateProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
+
+ReactDOM.render(Index, document.getElementById("root"));

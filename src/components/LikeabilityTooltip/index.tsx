@@ -11,28 +11,26 @@ const LikeabilityTooltip: React.FC<Input> = ({
   children,
   likePercentage,
   dislikePercentage,
-}) => {
-  return (
-    <div className="LikeabilityTooltip" data-text="">
-      {children}
-      {/* Exibir tooltip apenas se likePercentage ou dislikePercentage estiverem definidos */}
+}) => (
+  <div className="LikeabilityTooltip">
+    {children}
+    {/* Exibir tooltip apenas se likePercentage ou dislikePercentage estiverem definidos */}
 
-      <table className="Content">
-        <thead>
-          <tr>
-            <th>gostam</th>
-            <th>não gostam</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{percentageMask(likePercentage)}</td>
-            <td>{percentageMask(dislikePercentage)}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  );
-};
+    <table className="Content">
+      <thead>
+        <tr>
+          <th>gostam</th>
+          <th>não gostam</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{percentageMask(likePercentage)}</td>
+          <td>{percentageMask(dislikePercentage)}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+);
 
 export default LikeabilityTooltip;

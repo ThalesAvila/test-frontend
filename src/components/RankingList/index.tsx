@@ -10,10 +10,9 @@ const RankingList: React.FC = () => {
   // 1. Ler o state global
   const [{ rankingList }] = useStateValue();
 
+  // 2. Estilizar a lista do ranking
   return (
-    // 2. Estilizar a lista do ranking
     <div className="RankingList">
-      {/* 3. E renderizar um ProfileCard para cada item do rankingList */}
       <div>
         {rankingList.map((profile: Profile, i: number) => (
           <LikeabilityTooltip {...profile} key={profile.__id}>
