@@ -1,0 +1,78 @@
+.ProfileCard {
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.3rem;
+
+
+  // Efeito striped
+  &--striped {
+    background: #f2f0f1;
+  }
+
+  &-Avatar {
+    position: relative;
+
+    img {
+      box-shadow: 0 0 .5rem .2rem rgba(0, 0, 0, 0.75);
+      border: .4rem solid #6bbef1;
+      border-radius: 50%;
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      bottom: .6rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: .1rem solid #656363;
+      font-size: 1.4rem;
+      color: #707070;
+      font-weight: 700;
+    }
+  }
+
+  &-Info {
+    margin-left: 2rem;
+
+    strong {
+      font-size: 1.8rem;
+      letter-spacing: 0;
+      color: #272727;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+      letter-spacing: 0;
+      color: #909090;
+      font-weight: 400;
+    }
+  }
+
+  &:hover {
+    background-color: #1cbcb4;
+
+    .ProfileCard-Avatar {
+      img {
+        border: .4rem solid #ffffff;
+      }
+    }
+
+    .ProfileCard-Info {
+      strong {
+        color: #f2f1f1;
+      }
+
+      p {
+        color: #330d0e;
+      }
+    }
+  }
+}
